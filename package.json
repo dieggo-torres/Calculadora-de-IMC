@@ -1,0 +1,15 @@
+{
+  "name": "calculadora-com-nodejs-e-express",
+  "version": "1.0.0",
+  "description": "Calculadora simples",
+  "main": "calculadora.js",
+  "scripts": {
+    "start": "node calculadora.js",
+    "server": "nodemon calculadora.js"
+  },
+  "author": "Diego Moura Torres",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

@@ -12,12 +12,18 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  let peso = parseFloat(req.body.weight)
-  let altura = parseFloat(req.body.height)
-  let imc = peso / Math.pow(altura, 2)
-  res.send(`IMC (kg/m²): ${imc}`)
+  const peso = parseFloat(req.body.weight)
+  const altura = parseFloat(req.body.height)
+
+  if (peso && altura) {
+    const imc = peso / Math.pow(altura, 2)
+    res.send(`IMC (kg/m²): ${imc}`)
+  } else {
+    console.log('Por favor, preencha todos os campos.')
+    res.redirect('/')
+  }
 })
 
 app.listen(porta, () => {
-  console.log(`Servidor ouvindo na porta ${porta}.`);
+  console.log(`Servidor ouvindo na porta ${porta}.`)
 })
